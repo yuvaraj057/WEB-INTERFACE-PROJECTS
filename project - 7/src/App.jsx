@@ -1,4 +1,4 @@
-import FormValidation from './form validation.jsx'
+import FormValidation from './form.jsx'
 function App(){
   return(
     <FormValidation/>
