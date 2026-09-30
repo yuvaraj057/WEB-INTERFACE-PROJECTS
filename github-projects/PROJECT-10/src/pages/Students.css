@@ -1,0 +1,205 @@
+.roster-page {
+  --roster-accent: #167d82;
+  --roster-accent-soft: #e7f4f2;
+  display: grid;
+  gap: 16px;
+  animation: students-enter 320ms ease both;
+}
+
+.roster-page .eyebrow {
+  color: var(--roster-accent);
+}
+
+.roster-page .eyebrow svg {
+  color: #7662b2;
+}
+
+.roster-page .page-intro {
+  align-items: center;
+  margin-bottom: 0;
+}
+
+.roster-page .page-intro h1 {
+  color: var(--ink);
+  font-size: 25px;
+}
+
+.roster-page .page-intro > .button {
+  background: linear-gradient(115deg, #167d82, #6559a7);
+  box-shadow: 0 5px 14px #167d822a;
+}
+
+.roster-page .page-intro > .button:hover {
+  background: linear-gradient(115deg, #125f66, #51478e);
+}
+
+.roster-page .page-intro > .button {
+  min-height: 39px;
+}
+
+.roster-panel {
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  box-shadow: 0 12px 32px rgba(33, 56, 85, 0.06);
+}
+
+.roster-toolbar {
+  flex-wrap: wrap;
+  gap: 9px;
+  padding: 14px 16px;
+  background: var(--surface);
+}
+
+.roster-count {
+  min-width: 130px;
+  margin-right: auto;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.roster-count strong {
+  color: var(--roster-accent);
+  font: 700 15px 'Manrope', sans-serif;
+}
+
+.roster-toolbar .search-box {
+  flex: 1 1 210px;
+  max-width: 290px;
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.roster-toolbar .search-box:focus-within {
+  border-color: #78b8b1;
+  box-shadow: 0 0 0 3px #167d821a;
+}
+
+.roster-toolbar .search-box input {
+  width: 100%;
+}
+
+.roster-toolbar .filter-box {
+  min-width: 112px;
+  background: var(--surface);
+}
+
+.roster-toolbar .filter-box select {
+  max-width: 150px;
+  color: var(--ink);
+}
+
+.student-table-scroll {
+  scrollbar-color: #bac9dc transparent;
+  scrollbar-width: thin;
+}
+
+.student-table {
+  min-width: 970px;
+}
+
+.student-table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  color: #64748b;
+  background: #f3f6fb;
+}
+
+.student-table tbody tr {
+  transition: background-color 150ms ease;
+}
+
+.student-table tbody tr:hover {
+  background: color-mix(in srgb, var(--roster-accent-soft) 72%, var(--surface));
+}
+
+.student-table td {
+  height: 62px;
+}
+
+.student-cell strong {
+  color: var(--ink);
+}
+
+.row-actions {
+  gap: 3px;
+}
+
+.row-actions .icon-button {
+  width: 29px;
+  height: 29px;
+  border: 1px solid transparent;
+}
+
+.row-actions .icon-button:hover {
+  border-color: var(--border);
+  color: var(--roster-accent);
+  background: var(--roster-accent-soft);
+}
+
+.row-actions .delete-button:hover {
+  border-color: #f2d1d4;
+}
+
+.roster-footer {
+  min-height: 42px;
+}
+
+:root[data-theme='dark'] .roster-page {
+  --roster-accent: #80d1c9;
+  --roster-accent-soft: #1d3a39;
+}
+
+:root[data-theme='dark'] .roster-page .page-intro > .button {
+  color: #fff;
+  background: linear-gradient(115deg, #167d82, #6559a7);
+}
+
+@keyframes students-enter {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 640px) {
+  .roster-page {
+    gap: 12px;
+  }
+
+  .roster-page .page-intro {
+    align-items: flex-start;
+  }
+
+  .roster-page .page-intro h1 {
+    font-size: 20px;
+  }
+
+  .roster-page .page-intro > .button {
+    min-height: 34px;
+    padding: 0 9px;
+    font-size: 9px;
+    white-space: nowrap;
+  }
+
+  .roster-toolbar {
+    gap: 8px;
+    padding: 10px;
+  }
+
+  .roster-count {
+    flex-basis: 100%;
+  }
+
+  .roster-toolbar .search-box {
+    flex-basis: 100%;
+    max-width: none;
+  }
+
+  .roster-toolbar .filter-box {
+    flex: 1 1 28%;
+    min-width: 0;
+  }
+
+  .roster-toolbar .filter-box select {
+    width: 100%;
+    max-width: none;
+  }
+}

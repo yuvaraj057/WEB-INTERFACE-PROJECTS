@@ -1,0 +1,143 @@
+name: Deploy All Web Projects to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+
+      - name: Create deployment folder
+        run: mkdir -p site
+
+      - name: Copy main website
+        run: |
+          cp index.html site/
+          cp style.css site/
+          cp script.js site/
+
+      - name: Build Project 3
+        working-directory: PROJECT-3
+        run: |
+          npm ci
+          npm run build -- --base=/WEB-INTERFACE-PROJECTS/PROJECT-3/
+
+      - name: Copy Project 3
+        run: cp -r PROJECT-3/dist site/PROJECT-3
+
+      - name: Build Project 4
+        working-directory: PROJECT-4
+        run: |
+          npm ci
+          npm run build -- --base=/WEB-INTERFACE-PROJECTS/PROJECT-4/
+
+      - name: Copy Project 4
+        run: cp -r PROJECT-4/dist site/PROJECT-4
+
+      - name: Build Project 5
+        working-directory: PROJECT-5
+        run: |
+          npm ci
+          npm run build -- --base=/WEB-INTERFACE-PROJECTS/PROJECT-5/
+
+      - name: Copy Project 5
+        run: cp -r PROJECT-5/dist site/PROJECT-5
+
+      - name: Build Project 6
+        working-directory: PROJECT-6
+        run: |
+          npm ci
+          npm run build -- --base=/WEB-INTERFACE-PROJECTS/PROJECT-6/
+
+      - name: Copy Project 6
+        run: cp -r PROJECT-6/dist site/PROJECT-6
+
+      - name: Build Project 7
+        working-directory: PROJECT-7
+        run: |
+          npm ci
+          npm run build -- --base=/WEB-INTERFACE-PROJECTS/PROJECT-7/
+
+      - name: Copy Project 7
+        run: cp -r PROJECT-7/dist site/PROJECT-7
+
+      - name: Build Project 8
+        working-directory: PROJECT-8
+        run: |
+          npm ci
+          npm run build -- --base=/WEB-INTERFACE-PROJECTS/PROJECT-8/
+
+      - name: Copy Project 8
+        run: cp -r PROJECT-8/dist site/PROJECT-8
+
+      - name: Build Project 9
+        working-directory: PROJECT-9
+        run: |
+          npm ci
+          npm run build -- --base=/WEB-INTERFACE-PROJECTS/PROJECT-9/
+
+      - name: Copy Project 9
+        run: cp -r PROJECT-9/dist site/PROJECT-9
+
+      - name: Build Project 10
+        working-directory: PROJECT-10
+        run: |
+          npm ci
+          npm run build -- --base=/WEB-INTERFACE-PROJECTS/PROJECT-10/
+
+      - name: Copy Project 10
+        run: cp -r PROJECT-10/dist site/PROJECT-10
+
+      - name: Copy Unit 1 Project 1
+        run: cp -r UNIT-1-PROJECT-1 site/UNIT-1-PROJECT-1
+
+      - name: Copy Unit 1 Project 2
+        run: cp -r UNIT-1-PROJECT-2 site/UNIT-1-PROJECT-2
+
+      - name: Setup GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload website
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ./site
+
+  deploy:
+
+    needs: build
+
+    runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

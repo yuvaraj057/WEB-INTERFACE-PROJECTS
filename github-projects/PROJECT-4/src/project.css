@@ -1,0 +1,169 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f8f2f3;
+}
+
+
+/* Main Container */
+.container {
+  width: 90%;
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 30px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+
+  /* Center everything */
+  text-align: center;
+}
+
+/* Header */
+.header {
+  width: 100%;
+  background-color: #f80e0e;
+  color: white;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 40px;
+  color:white;
+}
+
+.header h3 {
+  margin-top: 10px;
+  font-size: 20px;
+  font-weight: normal;
+  color: white;
+}
+
+/* All Sections */
+.section {
+  width: 100%;
+  margin: 25px auto 0;
+  padding: 25px;
+
+  background-color: #06d9e8;
+
+  border-left: 5px solid #2563eb;
+  border-radius: 8px;
+
+  text-align: center;
+}
+
+/* Section Heading */
+.section h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #2563eb;
+  text-align: center;
+}
+
+/* Paragraph */
+.section p {
+  color: #333;
+  line-height: 1.7;
+  text-align: center;
+  margin: 10px auto;
+}
+
+/* Skills */
+.skills-list {
+  width: 100%;
+  max-width: 500px;
+
+  margin: 0 auto;
+  padding: 0;
+
+  list-style-position: inside;
+  text-align: center;
+}
+
+.skills-list li {
+  width: 100%;
+  margin: 10px auto;
+  padding: 12px;
+
+  background-color: #e0e7ff;
+  border-radius: 6px;
+
+  text-align: center;
+}
+
+/* Links */
+a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  width: 100%;
+  margin-top: 30px;
+
+  padding: 15px;
+
+  background-color: #1e293b;
+  color: white;
+
+  border-radius: 8px;
+
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+  text-align: center;
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+  .container {
+    width: 95%;
+    padding: 15px;
+    margin: 20px auto;
+  }
+
+  .header {
+    padding: 25px 15px;
+  }
+
+  .header h1 {
+    font-size: 30px;
+  }
+
+  .header h3 {
+    font-size: 16px;
+  }
+
+  .section {
+    padding: 20px 15px;
+  }
+
+  .section h2 {
+    font-size: 22px;
+  }
+
+  .section p {
+    font-size: 14px;
+  }
+
+  .skills-list {
+    max-width: 100%;
+  }
+}

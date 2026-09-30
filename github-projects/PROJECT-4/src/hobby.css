@@ -1,0 +1,39 @@
+body {
+  font-family: Arial;
+  background-color: #f0f0f0;
+}
+
+h1 {
+  text-align: center;
+}
+
+.hobby-container {
+  display: grid;
+  grid-template-columns: repeat(3, 280px);
+  gap: 25px;
+  justify-content: center;
+}
+
+.card {
+  width: 240px;
+  padding: 20px;
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: white;
+  text-align: center;
+}
+
+.card img {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.card h2 {
+  margin: 15px 0 10px;
+}
+
+.card p {
+  color: gray;
+}

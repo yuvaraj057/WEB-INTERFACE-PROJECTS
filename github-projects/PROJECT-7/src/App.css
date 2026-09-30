@@ -1,0 +1,424 @@
+.app-shell {
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 56px clamp(20px, 6vw, 84px) 72px;
+  color: #201b27;
+  background: #fffaf2;
+}
+
+.app-header {
+  max-width: 720px;
+  margin: 0 auto 44px;
+  text-align: left;
+}
+
+.app-header h1 {
+  max-width: 680px;
+  margin: 10px 0 14px;
+  color: #201b27;
+  font-size: clamp(2.4rem, 6vw, 5rem);
+  line-height: 1;
+}
+
+.app-header p:last-child {
+  max-width: 500px;
+  color: #6b6375;
+}
+
+.eyebrow,
+.router-label {
+  color: #d45345;
+  font-family: monospace;
+  font-size: 0.78rem;
+  font-weight: bold;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.practice-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.counter-panel,
+.title-panel,
+.title-change {
+  min-height: 270px;
+  box-sizing: border-box;
+  padding: 28px;
+  border: 1px solid rgba(32, 27, 39, 0.12);
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 18px 40px rgba(54, 39, 69, 0.08);
+}
+
+.counter-panel,
+.title-panel,
+.title-change {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  text-align: left;
+}
+
+.counter-panel h1,
+.title-panel h1,
+.title-change h1 {
+  margin: 0;
+  color: #201b27;
+  font-size: 1.55rem;
+}
+
+.counter-value {
+  color: #d45345;
+  font-family: monospace;
+  font-size: 4.4rem;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.counter-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+button {
+  border: 1px solid #201b27;
+  border-radius: 999px;
+  padding: 10px 16px;
+  color: #ffffff;
+  background: #201b27;
+  font: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+button:hover {
+  color: #201b27;
+  background: transparent;
+}
+
+button:focus-visible,
+.router-nav a:focus-visible {
+  outline: 3px solid #ffb703;
+  outline-offset: 3px;
+}
+
+.heart-button {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin: 32px 18px 18px;
+  align-self: center;
+  border: 0;
+  border-radius: 18px 18px 12px 12px;
+  background: #ff4d6d;
+  transform: rotate(-45deg);
+  box-shadow: 0 16px 28px rgba(255, 77, 109, 0.32);
+}
+
+.heart-button:hover {
+  color: #ffffff;
+  background: #ff4d6d;
+  transform: rotate(-45deg) scale(1.08);
+}
+
+.heart-button.liked {
+  background: #ffb703;
+}
+
+.heart-button span {
+  display: block;
+  color: #ffffff;
+  font-size: 42px;
+  line-height: 1;
+  transform: rotate(45deg);
+}
+
+.router-layout {
+  max-width: 960px;
+  margin: 48px auto 0;
+  border-top: 1px solid rgba(32, 27, 39, 0.14);
+  text-align: left;
+}
+
+.router-nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding: 20px 0;
+}
+
+.router-label {
+  width: 100%;
+  margin: 0;
+}
+
+.router-nav a {
+  color: #201b27;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.router-nav a:hover {
+  color: #d45345;
+}
+
+.theme-toggle {
+  margin-left: auto;
+  background: #d45345;
+}
+
+.router-content {
+  padding: 24px 0;
+}
+
+.route-page {
+  padding: 28px;
+  border-left: 4px solid #ffb703;
+  background: #ffffff;
+}
+
+.route-page h2 {
+  color: #201b27;
+}
+
+.route-page p {
+  color: #6b6375;
+}
+
+.student-card {
+  max-width: 960px;
+  margin: 32px auto 0;
+  padding: 28px;
+  border: 1px solid rgba(32, 27, 39, 0.12);
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 18px 40px rgba(54, 39, 69, 0.08);
+  text-align: left;
+}
+
+.form-card {
+  max-width: 520px;
+  margin: 32px auto 0;
+  padding: 28px;
+  border: 1px solid rgba(32, 27, 39, 0.12);
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 18px 40px rgba(54, 39, 69, 0.08);
+  text-align: left;
+}
+
+.form-card h2 {
+  margin: 8px 0;
+  color: #201b27;
+}
+
+.form-description {
+  margin-bottom: 22px;
+  color: #6b6375;
+}
+
+.form-card form {
+  display: grid;
+  gap: 8px;
+}
+
+.form-card label {
+  margin-top: 8px;
+  color: #201b27;
+  font-weight: bold;
+}
+
+.form-card input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #c8bece;
+  border-radius: 8px;
+  color: #201b27;
+  background: #fffaf2;
+  font: inherit;
+}
+
+.form-card input[aria-invalid='true'] {
+  border-color: #d45345;
+}
+
+.form-card input:focus {
+  border-color: #d45345;
+  outline: 3px solid rgba(212, 83, 69, 0.2);
+}
+
+.form-card button {
+  width: fit-content;
+  margin-top: 14px;
+}
+
+.field-error,
+.success-message {
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+.field-error {
+  color: #b52f28;
+}
+
+.success-message {
+  color: #287a4b;
+  font-weight: bold;
+}
+
+.student-card h2 {
+  margin: 8px 0;
+  color: #201b27;
+}
+
+.student-description {
+  margin-bottom: 20px;
+  color: #6b6375;
+}
+
+.student-card form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  max-width: 520px;
+  margin-bottom: 20px;
+}
+
+.student-input {
+  box-sizing: border-box;
+  flex: 1 1 280px;
+  padding: 12px 14px;
+  border: 1px solid #c8bece;
+  border-radius: 8px;
+  color: #201b27;
+  background: #fffaf2;
+  font: inherit;
+}
+
+.student-input:focus {
+  border-color: #d45345;
+  outline: 3px solid rgba(212, 83, 69, 0.2);
+}
+
+.student-level {
+  margin-top: 18px;
+  padding: 16px;
+  border-left: 3px solid #ffb703;
+  background: #fffaf2;
+}
+
+.student-level p {
+  margin: 0 0 8px;
+  color: #6b6375;
+  font-size: 0.85rem;
+}
+
+.level-two {
+  border-left-color: #ff8066;
+}
+
+.level-three {
+  border-left-color: #d45345;
+}
+
+.level-three strong {
+  color: #d45345;
+  font-size: 1.1rem;
+}
+
+.app-shell.dark {
+  color: #f8f1fb;
+  background: #201b27;
+}
+
+.app-shell.dark .app-header h1,
+.app-shell.dark .counter-panel h1,
+.app-shell.dark .title-panel h1,
+.app-shell.dark .title-change h1,
+.app-shell.dark .route-page h2,
+.app-shell.dark .router-nav a {
+  color: #fffaf2;
+}
+
+.app-shell.dark .app-header p:last-child,
+.app-shell.dark .route-page p {
+  color: #c8bece;
+}
+
+.app-shell.dark .counter-panel,
+.app-shell.dark .title-panel,
+.app-shell.dark .title-change,
+.app-shell.dark .route-page,
+.app-shell.dark .student-card {
+  border-color: rgba(255, 250, 242, 0.16);
+  background: #2d2635;
+}
+
+.app-shell.dark .student-card h2,
+.app-shell.dark .student-input {
+  color: #fffaf2;
+}
+
+.app-shell.dark .student-description,
+.app-shell.dark .student-level p {
+  color: #c8bece;
+}
+
+.app-shell.dark .student-input,
+.app-shell.dark .student-level {
+  color: #fffaf2;
+  background: #201b27;
+}
+
+.app-shell.dark .router-layout {
+  border-color: rgba(255, 250, 242, 0.16);
+}
+
+.app-shell.dark button {
+  border-color: #fffaf2;
+  color: #201b27;
+  background: #fffaf2;
+}
+
+.app-shell.dark button:hover {
+  color: #fffaf2;
+  background: transparent;
+}
+
+@media (max-width: 760px) {
+  .app-shell {
+    padding: 36px 18px 48px;
+  }
+
+  .app-header {
+    margin-bottom: 30px;
+  }
+
+  .practice-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .counter-panel,
+  .title-panel,
+  .title-change {
+    min-height: 220px;
+  }
+
+  .router-layout {
+    margin-top: 34px;
+  }
+
+  .theme-toggle {
+    margin-left: 0;
+  }
+}
